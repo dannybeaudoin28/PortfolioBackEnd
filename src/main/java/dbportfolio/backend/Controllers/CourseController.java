@@ -6,5 +6,4 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @Controller
 @CrossOrigin
 public class CourseController {
-    //test
-}
+    //test dasdf
