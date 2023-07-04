@@ -25,7 +25,22 @@ public class CourseService {
         return (ArrayList<Course>) this.courseRepo.findAll();
     }
 
-    public void deleteCourseById(Integer id) {
-        this.courseRepo.deleteById(id);
+    public boolean deleteCourseById(Integer id) {
+        if(!courseRepo.findById(id).isEmpty()) {
+            courseRepo.deleteById(id);
+            return true;
+        }
+        return false;
+    }
+
+    public Course updateCourse(Course newCourse, Integer id) {
+        Course oldCourse = courseRepo.findById(id).get();
+        if(oldCourse != null) {
+            oldCourse.setDesc(newCourse.getDesc());
+            oldCourse.setName(newCourse.getName());
+            oldCourse.setYear(newCourse.getYear());
+            return oldCourse;
+        }
+        return null;
     }
 }
