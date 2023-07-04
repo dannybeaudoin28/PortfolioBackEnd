@@ -1,5 +1,6 @@
 package dbportfolio.backend.Controllers;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,8 +17,11 @@ public class CourseController {
     //test dasdf adsfas
     @GetMapping("/getAllCourses")
     public ResponseEntity<Course> getAllCourses() {
-      // TODO document why this method is empty
+      return null;
     }
 
-    @PostMapping()
+    @PostMapping("/postCourse")
+    public ResponseEntity<Integer> postCourse (@RequestBody Course course) {
+      return new ResponseEntity<Integer>(1, HttpStatus.OK);
+    }
 }
