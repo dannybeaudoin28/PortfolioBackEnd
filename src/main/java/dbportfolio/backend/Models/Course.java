@@ -65,6 +65,8 @@ public class Course {
         this.year = year;
     }
 
+    public Course() {}
+
     public double getGrade() {
         return grade;
     }

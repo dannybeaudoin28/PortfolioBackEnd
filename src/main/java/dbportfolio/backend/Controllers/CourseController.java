@@ -19,8 +19,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 
-@RestController("/api/courses")
-@CrossOrigin("*")
+@RestController("/api")
+@CrossOrigin(origins = "*")
 public class CourseController {
     @Autowired
     private CourseService courseService;
