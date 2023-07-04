@@ -20,6 +20,9 @@ public class Course {
     @Column(name = "COURSE_DESC")
     private String desc;
 
+    @Column(name = "COURSE_GRADE")
+    private double grade;
+
     @Column(name = "COURSE_YEAR")
     private String year;
 
@@ -55,9 +58,18 @@ public class Course {
         this.year = year;
     }
 
-    public Course(String name, String desc, String year) {
+    public Course(String name, String desc, double grade, String year) {
         this.name = name;
         this.desc = desc;
+        this.grade = grade;
         this.year = year;
+    }
+
+    public double getGrade() {
+        return grade;
+    }
+
+    public void setGrade(double grade) {
+        this.grade = grade;
     }
 }
